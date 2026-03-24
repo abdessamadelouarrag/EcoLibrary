@@ -17,6 +17,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanc
 
 // route publique pour lire les livres
 Route::get('/books', [BookController::class, 'index']);
+Route::get('categorie', [CategorieController::class, 'index']);
 
 Route::middleware(['auth:sanctum', 'admin'])->group(function () {
     Route::apiResource('categorie', CategorieController::class);
